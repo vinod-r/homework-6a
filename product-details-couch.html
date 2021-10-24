@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/product-details.js"></script>
     <title>Fluff Stuff | Couch Pillows</title>
   </head>
   <body>
@@ -65,6 +65,7 @@
                     name="color-picker"
                     id="after-school-special"
                     aria-label="After School Special"
+                    checked
                   />
                   <label for="after-school-special"
                     ><span class="colorbox afterschool"></span>
@@ -121,6 +122,7 @@
                     name="size-picker"
                     id="Small"
                     aria-label="Small Size"
+                    checked
                   />
                   <label class="size-label" for="Small">
                     <span class="size-title">Small</span>
@@ -161,7 +163,7 @@
                 <button class="decrease" aria-label="Decrease Quantity">
                   -
                 </button>
-                <h1>1</h1>
+                <h1 id="quantity-value">1</h1>
                 <button class="increase" aria-label="Increase Quantity">
                   +
                 </button>
@@ -175,7 +177,7 @@
             Add 1 pillow to cart <br />
             $27.99
           </h2>
-          <button aria-label="Add to cart">
+          <button id="add-to-cart-button" aria-label="Add to cart">
             <img
               src="./images/white_arrow.svg"
               alt="White forward arrow icon"

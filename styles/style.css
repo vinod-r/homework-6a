@@ -316,7 +316,8 @@ nav {
 /* Layout and styling of the internal pages */
 .product-listing-content,
 .product-details-content,
-.details-listing-card {
+.details-listing-card,
+.shopping-cart-content {
   background-color: #fff;
   height: 100%;
   position: relative;
@@ -336,7 +337,8 @@ nav {
 }
 
 /* Styling the product listing layout */
-.product-listing-block {
+.product-listing-block,
+.shopping-cart-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -587,16 +589,19 @@ label span {
   opacity: 0.3;
 }
 
-.increase {
+.increase,
+.decrease {
   cursor: pointer;
   transition: transform 0.2s;
 }
 
-.increase:hover {
+.increase:hover,
+.decrease:hover {
   transform: scale(1.1);
 }
 
-.increase:active {
+.increase:active,
+.decrease:active {
   background-color: var(--mid-blue);
 }
 
@@ -604,6 +609,10 @@ label span {
   padding: 20px 32px 14px 32px;
   border: 1px solid var(--light-gray);
   border-radius: 0.5em;
+}
+#quantity-value {
+  width: 100px;
+  text-align: center;
 }
 
 /* Styling the add to cart unit */
@@ -671,7 +680,7 @@ label span {
   outline: none;
 }
 
-.about-modal {
+#about-modal {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -734,7 +743,7 @@ label span {
   grid-area: map;
 }
 
-.close-modal {
+#close-modal {
   position: absolute;
   top: 1.5em;
   right: 1.5em;

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/about.js"></script>
     <title>Fluff Stuff | About</title>
   </head>
   <body>
@@ -80,7 +80,7 @@
       </div>
       <!-- Global navigation -->
 
-      <div class="about-modal">
+      <div id="about-modal">
         <div class="about-card">
           <div class="about-data">
             <h1>About Fluff Stuff</h1>
@@ -106,10 +106,7 @@
             </p>
           </div>
           <img src="./images/map.jpg" alt="" class="map" />
-          <a
-            href="javascript:javascript:history.go(-1)"
-            class="close-modal"
-            aria-label="Link to close the Modal"
+          <a href="#" id="close-modal" aria-label="Link to close the Modal"
             ><img src="./images/close-icon.svg" alt="Close Icon for the Modal"
           /></a>
         </div>
