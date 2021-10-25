@@ -61,12 +61,12 @@ const updateCartDisplay = () => {
       itemsInCart > 1 ? "items" : "item"
     } in cart`;
     cartStatus.style.color = "rgba(17, 94, 152, 1)";
-    cartIcon.src = "../images/cart-full.svg";
+    cartIcon.src = "./images/cart-full.svg";
     goToCart.style.display = "block";
   } else {
     cartStatus.innerHTML = "Cart Empty";
     cartStatus.style.color = "rgba(17, 94, 152, 0.12)";
-    cartIcon.src = "../images/cart.svg";
+    cartIcon.src = "./images/cart.svg";
     goToCart.style.display = "none";
   }
 };
