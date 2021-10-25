@@ -6,6 +6,12 @@ const image = document.getElementsByClassName("details-image")[0];
 const sizePicker = document.getElementsByName("size-picker");
 const colorPicker = document.getElementsByName("color-picker");
 const addtoCartBtn = document.getElementById("add-to-cart-button");
+const addModal = document.getElementById("added-modal");
+const addToCartUnit = document.getElementsByClassName("add-to-cart")[0];
+const confirmAddBtn = document.getElementById("add-confirm");
+const cartStatus = document.getElementById("cart-status");
+const cartIcon = document.getElementById("cart-image");
+const goToCart = document.getElementById("go-to-cart");
 
 //object to store prices for different pillows
 const database = {
@@ -31,6 +37,38 @@ window.onload = () => {
   cost = database[pillowType].cost;
   addToCartText.innerHTML = `Add 1 pillow to cart <br />
             $${cost}`;
+
+  updateCartDisplay();
+};
+
+//drawing the cart
+const updateCartDisplay = () => {
+  const cartList = localStorage.getItem("cart");
+  let itemsInCart = 0;
+  if (cartList != null) {
+    console.log(cartList);
+    let cartListArr = cartList.split(" ");
+    cartListArr.forEach((product) => {
+      if (product.length > 0) {
+        itemsInCart = itemsInCart + parseInt(product[1]);
+      }
+    });
+    // itemsInCart = cartListArr.length;
+  }
+
+  if (itemsInCart > 0) {
+    cartStatus.innerHTML = `${itemsInCart} ${
+      itemsInCart > 1 ? "items" : "item"
+    } in cart`;
+    cartStatus.style.color = "rgba(17, 94, 152, 1)";
+    cartIcon.src = "../images/cart-full.svg";
+    goToCart.style.display = "block";
+  } else {
+    cartStatus.innerHTML = "Cart Empty";
+    cartStatus.style.color = "rgba(17, 94, 152, 0.12)";
+    cartIcon.src = "../images/cart.svg";
+    goToCart.style.display = "none";
+  }
 };
 
 //add to cart unit display update
@@ -40,6 +78,7 @@ const updateAddToCartDisplay = () => {
     value > 1 ? "pillows" : "pillow"
   } to cart <br />
             $${currentPrice}`;
+  addToCartUnit.style.display = "grid";
 };
 
 //updating image color based on selection
@@ -139,5 +178,17 @@ colorPicker.forEach((pillowColor) => {
 //adding to cart
 addtoCartBtn.addEventListener("click", () => {
   const itemToCart = (pillowType + value + size + color).toString();
-  console.log(itemToCart);
+  let cartStorage = localStorage.getItem("cart");
+  if (cartStorage == null) {
+    cartStorage = "";
+  }
+  cartStorage = `${cartStorage} ${itemToCart}`;
+  localStorage.setItem("cart", cartStorage);
+  addModal.style.display = "grid";
+  addToCartUnit.style.display = "none";
+});
+
+confirmAddBtn.addEventListener("click", () => {
+  addModal.style.display = "none";
+  updateCartDisplay();
 });

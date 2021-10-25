@@ -622,7 +622,7 @@ label span {
   display: grid;
   right: 0;
   transform: translate(50%);
-  top: 38%;
+  top: 30%;
 }
 
 #add-to-cart-text {
@@ -678,6 +678,18 @@ label span {
 
 .add-to-cart input:focus {
   outline: none;
+}
+
+#go-to-cart {
+  background-color: var(--primary-blue);
+  font-weight: 500;
+  font-size: 1em;
+  border: none;
+  color: white;
+  padding: 1em 4em 1em 4em;
+  border-radius: 1em;
+  margin-top: 2em;
+  display: none;
 }
 
 #about-modal {
@@ -810,4 +822,39 @@ label span {
 
 .discount-listing-block {
   padding-bottom: 4.5em;
+}
+
+#added-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(17, 94, 152, 0.3);
+  backdrop-filter: blur(40px);
+  place-content: center;
+  display: none;
+}
+
+#added-to-cart {
+  padding: 4.5em;
+  background: white;
+  border-radius: 1em;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: var(--text-black);
+  display: grid;
+  place-content: center;
+}
+
+#add-confirm {
+  background-color: var(--primary-blue);
+  font-size: 0.75em;
+  color: white;
+  width: fit-content;
+  place-self: center;
+  padding: 1.5em 2em 1.5em 2em;
+  margin-top: 2em;
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
 }
