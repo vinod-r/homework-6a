@@ -66,7 +66,7 @@ const updateCartDisplay = () => {
   } else {
     cartStatus.innerHTML = "Cart Empty";
     cartStatus.style.color = "rgba(17, 94, 152, 0.12)";
-    cartIcon.src = "./images/cart.svg";
+    cartIcon.src = "./images/Cart.svg";
     goToCart.style.display = "none";
   }
 };

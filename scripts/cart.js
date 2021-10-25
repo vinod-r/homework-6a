@@ -33,19 +33,19 @@ const createNewItem = (item) => {
   let cartImage = document.createElement("img");
   switch (pillowType) {
     case "B":
-      cartImage.src = "../images/bed.jpg";
+      cartImage.src = "./images/bed.jpg";
       cartImage.alt = "Bed Pillow";
       break;
     case "C":
-      cartImage.src = "../images/couch.jpg";
+      cartImage.src = "./images/couch.jpg";
       cartImage.alt = "Couch Pillow";
       break;
     case "F":
-      cartImage.src = "../images/floor.jpg";
+      cartImage.src = "./images/floor.jpg";
       cartImage.alt = "Floor Pouf";
       break;
     case "R":
-      cartImage.src = "../images/round.jpg";
+      cartImage.src = "./images/round.jpg";
       cartImage.alt = "Round Pillow";
       break;
   }
