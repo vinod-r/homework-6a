@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/cart.js"></script>
     <title>Fluff Stuff | All Products</title>
   </head>
   <body>
@@ -14,7 +14,23 @@
       <!-- The content of the product listing page -->
 
       <div class="shopping-cart-content">
+        <a href="#" class="back-link" aria-label="Link back to home"
+          ><img src="./images/Back_Arrow.svg" alt="Back Arrow" />
+          <p>Back</p>
+        </a>
         <div class="shadow-element"></div>
+        <h1 id="page-title">Cart</h1>
+        <div id="cart-header">
+          <h2 id="cart-label-item" class="cart-label">Item</h2>
+          <h2 id="cart-label-quantity" class="cart-label">Quantity</h2>
+          <h2 id="cart-label-subtotal" class="cart-label">Subtotal</h2>
+        </div>
+        <div id="cart-body"></div>
+        <div class="cart-body-empty">
+          <h1>No items in Cart</h1>
+        </div>
+
+        <div class="cart-total-block"></div>
       </div>
       <!-- The global navigation -->
       <nav>
@@ -24,10 +40,6 @@
               <img src="./images/Logo.svg" alt="Fluff Stuff" /></div
           ></a>
           <p id="sub-title">Get the right stuff under your head</p>
-        </div>
-        <div class="cart">
-          <img src="./images/Cart.svg" alt="Empty Cart" />
-          <h2 id="cart-status">Cart Empty</h2>
         </div>
         <div class="about-section">
           <a href="./about.html" class="link" aria-label="Link to About Page"

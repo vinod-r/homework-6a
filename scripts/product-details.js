@@ -14,11 +14,11 @@ const cartIcon = document.getElementById("cart-image");
 const goToCart = document.getElementById("go-to-cart");
 
 //object to store prices for different pillows
-const database = {
-  B: { cost: 39.99 },
-  C: { cost: 19.99 },
-  F: { cost: 79.99 },
-  R: { cost: 29.99 },
+const costDatabase = {
+  B: 39.99,
+  C: 19.99,
+  F: 79.99,
+  R: 29.99,
 };
 
 //initializing all pillow variables
@@ -34,7 +34,7 @@ window.onload = () => {
   pillowType = document
     .getElementById("details-title")
     .innerHTML.substring(0, 1);
-  cost = database[pillowType].cost;
+  cost = costDatabase[pillowType];
   addToCartText.innerHTML = `Add 1 pillow to cart <br />
             $${cost}`;
 
@@ -50,7 +50,7 @@ const updateCartDisplay = () => {
     let cartListArr = cartList.split(" ");
     cartListArr.forEach((product) => {
       if (product.length > 0) {
-        itemsInCart = itemsInCart + parseInt(product[1]);
+        itemsInCart = itemsInCart + parseInt(product.substring(3));
       }
     });
     // itemsInCart = cartListArr.length;
@@ -177,18 +177,13 @@ colorPicker.forEach((pillowColor) => {
 
 //adding to cart
 addtoCartBtn.addEventListener("click", () => {
-  const itemToCart = (pillowType + value + size + color).toString();
+  const itemToCart = (pillowType + color + size + value).toString();
   let cartStorage = localStorage.getItem("cart");
   if (cartStorage == null) {
     cartStorage = "";
   }
   cartStorage = `${cartStorage} ${itemToCart}`;
   localStorage.setItem("cart", cartStorage);
-  addModal.style.display = "grid";
   addToCartUnit.style.display = "none";
-});
-
-confirmAddBtn.addEventListener("click", () => {
-  addModal.style.display = "none";
   updateCartDisplay();
 });
